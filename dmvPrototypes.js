@@ -1,10 +1,6 @@
 const WaitingListPerson = require('./waitingListPerson');
 const WaitingList = require('./waitingList');
-function extend(target, extensions) {
-  for (let ext in extensions) {
-    target[ext] = extensions[ext];
-  }
-}
+const extend = require('./extendUtility');
 
 function DMV(maxTicketsToProcess = 5) {
   this.ticketsFree = new Array(40).fill(null).map((_, index) => index + 1);
